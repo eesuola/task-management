@@ -4,6 +4,7 @@ import { configDotenv } from "dotenv";
 import cors from "cors";
 import registrationRoute from "./routes/user.js";
 import {logToTerminal} from "./middleware/loggers.js";
+import taskRoute from "./routes/task.js";
 
 configDotenv();
 
@@ -13,6 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/auth", logToTerminal, registrationRoute);
+app.use("/", logToTerminal, taskRoute);
 const HOST = "localhost";
 
 

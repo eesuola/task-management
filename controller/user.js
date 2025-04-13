@@ -8,13 +8,9 @@ configDotenv();
 
 export const registration = async (req, res) => {
   try {
-     console.log(req.body);
-
-    const existingUser = await User.findOne({ email: req.body.email });
-    if (existingUser) {
-      throw new Error("User already exists");
-    }
-
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
 
     if (!req.body.firstName || !req.body.email || !req.body.password) {
       throw new Error("First Name not provided");
@@ -27,6 +23,12 @@ export const registration = async (req, res) => {
       message: "User registered successfully",
       data: user,
     });
+    // check if user already exists
+    const existingUser = await User.findOne({ email: req.body.email });
+    if (existingUser) {
+      throw new Error("User already exists");
+    }
+  
     
   } catch (error) {
     console.error(error.message);
@@ -40,6 +42,8 @@ export const registration = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
+    console.log(req.body);
+    
     const email = req.body.email;
     const password = req.body.password;
 
@@ -59,7 +63,7 @@ export const login = async (req, res) => {
 
     const payload = {
       id: existingUser._id,
-      firstName: existingUser.firstName,
+      name: existingUser.name,
       email: existingUser.email,
     };
 
@@ -74,7 +78,7 @@ export const login = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: `Welcome ${existingUser.firstName}`,
+      message: `Welcome ${existingUser.name}`,
       token: token,
     });
     
