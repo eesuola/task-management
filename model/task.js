@@ -12,15 +12,21 @@ const taskSchema = new Schema(
       type: String,
       required: true,
     },
-    completed: {
-      type: Boolean,
-      default: false,
+    status: {
+      type: String,
+      enum: ["Pending", "Completed", "Not completed"],
+      required: true,
+      default: "Pending",
     },
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    date: {
+      type: Date,
       required: true,
     },
+    time: {
+      type: String,
+      required: true,
+    },
+    
   },
   { timestamps: true }
 );

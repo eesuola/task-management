@@ -14,6 +14,48 @@ Content-Type: application/json
 
 {
 
-  "email":"enochJames111@email.com",
-  "password": "EnochJames"  
+  "email":"enochJames1112@email.com",
+  "password": "EnochJames121"  
+}
+
+###
+GET http://localhost:8000/auth/user
+Content-Type: application/json
+
+{
+  
+}
+
+###
+POST http://localhost:8000/create
+Content-Type: application/json
+
+{
+  "title": "Read the book called MY BODY IS MY TEMPLE",
+  "description": "This is a book that talks about the importance of taking care of your body and mind.",
+  "date": "2023-10-01",
+  "time": "10:00",
+  "status": "pending",
+}
+
+###
+POST http://localhost:8000/update
+Content-Type: application/json
+
+{
+  "id": "67fb7fcfcfaf1446259f4579",
+  "title": "Read the book called MY BODY IS MY TEMPLE",
+  "description": "This is a book that talks about the importance of taking care of your body and mind.",
+  "date": "2026-01-10",
+  "time": "10:00",
+  "status": "Completed"
+  
+}
+
+###
+DELETE  http://localhost:8000/delete
+Content-Type: application/json
+
+{
+  "id": "67fb7fcfcfaf1446259f4579"
 }

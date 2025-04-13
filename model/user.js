@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+
 
 const { Schema } = mongoose;
 
@@ -26,7 +28,7 @@ const userSchema = new Schema({
   
 }, { timestamps: true });
 
-UserSchema.pre("save", async function () {
+userSchema.pre("save", async function () {
   const salt = await bcrypt.genSalt(10);
   console.log(salt);
 

@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import { configDotenv } from "dotenv";
 configDotenv();
 
+
 //Register a new user
 
 export const registration = async (req, res) => {
@@ -12,8 +13,8 @@ export const registration = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    if (!req.body.firstName || !req.body.email || !req.body.password) {
-      throw new Error("First Name not provided");
+    if (!req.body.name || !req.body.email || !req.body.password) {
+      throw new Error("Please fill all the fields");
     }
     const user = new User(req.body);
     await user.save();
@@ -42,8 +43,8 @@ export const registration = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    console.log(req.body);
-    
+    //console.log(req.body);
+    //
     const email = req.body.email;
     const password = req.body.password;
 

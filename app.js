@@ -5,6 +5,8 @@ import cors from "cors";
 import registrationRoute from "./routes/user.js";
 import {logToTerminal} from "./middleware/loggers.js";
 import taskRoute from "./routes/task.js";
+import adminRoutes from "/routes/task/js";
+
 
 configDotenv();
 
@@ -15,6 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/auth", logToTerminal, registrationRoute);
 app.use("/", logToTerminal, taskRoute);
+app.use("/admin", checkToken, adminRoutes);
 const HOST = "localhost";
 
 
