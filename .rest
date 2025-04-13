@@ -2,10 +2,10 @@ POST http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
-  "name": "Enoch James",
-  "email":"enochJames1112@email.com",
-  "password": "EnochJames121",
-  "isAdmin": false
+  "name": "Florence Eva",
+  "email":"floeva01@email.com",
+  "password": "readmeOne",
+  "isAdmin": true
 }
 
 ###
@@ -14,16 +14,8 @@ Content-Type: application/json
 
 {
 
-  "email":"enochJames1112@email.com",
-  "password": "EnochJames121"  
-}
-
-###
-GET http://localhost:8000/auth/user
-Content-Type: application/json
-
-{
-  
+  "email":"floeva01@email.com",
+  "password": "readmeOne"  
 }
 
 ###
@@ -59,3 +51,13 @@ Content-Type: application/json
 {
   "id": "67fb7fcfcfaf1446259f4579"
 }
+
+###
+GET http://localhost:8000/admin/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmI5YmZhNjdmZmY2YTlkNmM0MWRiZCIsIm5hbWUiOiJGbG9yZW5jZSBFdmEiLCJlbWFpbCI6ImZsb2V2YTAxQGVtYWlsLmNvbSIsImlhdCI6MTc0NDU0Mjc1OSwiZXhwIjoxNzQ4NDMwNzU5fQ.N5VvTORKAWWJzwQza5myMDFoJAsSHS0Z-yXjEFtyuRQ
+
+###
+GET http://localhost:8000/admin/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmI5YmZhNjdmZmY2YTlkNmM0MWRiZCIsIm5hbWUiOiJGbG9yZW5jZSBFdmEiLCJlbWFpbCI6ImZsb2V2YTAxQGVtYWlsLmNvbSIsImlhdCI6MTc0NDU0Mjc1OSwiZXhwIjoxNzQ4NDMwNzU5fQ.N5VvTORKAWWJzwQza5myMDFoJAsSHS0Z-yXjEFtyuRQ

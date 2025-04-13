@@ -2,11 +2,11 @@ import express from "express";
 
 const routes = express.Router();
 
-import { getAllUsers, getAllTasks } from "../controller/admin.js";
+import { getUsers, getAllTasks } from "../controller/admin.js";
 
 
-routes.get("/auth", getAllUsers);
-routes.get("/auth", getAllTasks);
+routes.get("/users", getUsers);
+routes.get("/tasks", getAllTasks);
 
 
 

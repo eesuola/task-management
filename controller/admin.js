@@ -1,18 +1,44 @@
-import Task from "../model/task.js";
 import User from "../model/user.js";
+import Task from "../model/task.js";
 
 
-export const getAllUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
     try {
-        console.log(req.body);
-        
+        const allUsers = await User.find();
+      
+        res.status(200).json({
+          success: true,
+          message: "All users",
+          data: allUsers,
+        });
         
         
     } catch (error) {
-        console.error(error.message);
-        res.status(400).json({
+        res.status(500).json({
             success: false,
             message: error.message,
         });
     }
-};
+    
+  };
+  
+
+export const getAllTasks = async (req, res) => {
+    try {
+        const allTasks = await Task.find();
+
+        res.status(200).json({
+            success: false,
+            message: "All Tasks",
+            data: allTasks,
+        });
+        
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+        
+    }
+  }
+  
