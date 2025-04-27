@@ -61,3 +61,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmI5YmZhN
 GET http://localhost:8000/admin/tasks
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmI5YmZhNjdmZmY2YTlkNmM0MWRiZCIsIm5hbWUiOiJGbG9yZW5jZSBFdmEiLCJlbWFpbCI6ImZsb2V2YTAxQGVtYWlsLmNvbSIsImlhdCI6MTc0NDU0Mjc1OSwiZXhwIjoxNzQ4NDMwNzU5fQ.N5VvTORKAWWJzwQza5myMDFoJAsSHS0Z-yXjEFtyuRQ
+
+###
+PATCH http://localhost:8000/auth/uploadProfilePicture
+Content-Type: multipart/form-data
+
+userId=67fb9bfa67fff6a9d6c41dbd
+photo=@./C:\Users\HP\Downloads/Screenshot_25-4-2025_9564_typetest.io.jpg
+

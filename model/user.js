@@ -24,6 +24,17 @@ const userSchema = new Schema({
     required: [true, "Please enter a password"],
     minlength: 6,
   },
+  profilePicture: {
+    type: String,
+    validate: {
+      validator: function (v) {
+        return /^https?:\/\/.+\.(jpg|jpeg|png|gif)$/i.test(v);
+      },
+      message: props => `${props.value} is not a valid image URL!`
+    },
+    default: '',
+  },
+  
   
   
 }, { timestamps: true });
