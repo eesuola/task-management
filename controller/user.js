@@ -95,10 +95,10 @@ export const login = async (req, res) => {
 
 export const uploadProfilePic = async (req, res) => {
   try {
-    const userId = req.body.userId; // <-- get user id from form-data
-    const photoPath = req.file.path; // multer gives you the uploaded file info
+    const userId = req.body.userId; 
+    const photoPath = req.file.path; 
 
-    // Now update user in DB
+    
     const user = await User.findByIdAndUpdate(userId, { profilePicture: photoPath }, { new: true });
 
     res.status(200).json({
