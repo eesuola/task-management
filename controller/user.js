@@ -111,26 +111,3 @@ export const uploadProfilePic = async (req, res) => {
   }
 };
 
-
-// export const uploadProfilePic = async (req, res) => {
-//   try {
-//     const user = await User.findByPk(req.user.id);
-//     if (!user) 
-//       throw new error('User not found');
-//     if (req.file) {
-//       user.profilePicture = req.file.buffer;
-//       await user.save();
-//     }
-    
-//     res.status(200).json({
-//       status: 'success ',
-//       message:'Profile Picture Uploaded Successfully'
-//     })
-//   } catch (error) {
-//     console.error(error.message);
-//     res.status(400).json({
-//     success: false,
-//     message: error.message,
-//   });
-//   }
-// }
